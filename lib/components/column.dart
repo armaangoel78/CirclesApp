@@ -4,13 +4,18 @@ import 'package:google_fonts/google_fonts.dart';
 class MyColumn extends StatelessWidget {
   final List<Widget> children;
   final double padding;
+  final MainAxisAlignment mainAxisAlignment;
+  final CrossAxisAlignment crossAxisAlignment;  
 
-  MyColumn(this.children, this.padding);
+  MyColumn(this.children, this.padding, 
+    {this.mainAxisAlignment: MainAxisAlignment.center, 
+    this.crossAxisAlignment: CrossAxisAlignment.center});
 
   @override
   Widget build(BuildContext context) {
     return new Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: mainAxisAlignment,
+      crossAxisAlignment: crossAxisAlignment,
       children: List.generate(children.length, (int index) {
         return new Container(
           padding: EdgeInsets.only(top: index != 0 ? padding : 0),
