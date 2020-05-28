@@ -1,5 +1,5 @@
-import 'package:CirclesMobile/components/button.dart';
-import 'package:CirclesMobile/components/column.dart';
+import 'package:CirclesMobile/components/buttons/button.dart';
+import 'package:CirclesMobile/components/layouts/column.dart';
 import 'package:CirclesMobile/components/text.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
@@ -38,7 +38,7 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
     return Scaffold(
       body: Center(
         child: MyColumn(
-          <Widget>[
+          children: <Widget>[
             MyText("Circles", size: 90),
             Container(
               child: Image(
@@ -47,10 +47,10 @@ class _LoginPageState extends State<LoginPage> with SingleTickerProviderStateMix
               ),
               padding: EdgeInsets.only(top: 30 + paddingAdjust, bottom: 30 - paddingAdjust),
             ),
-            MyButton("Login", true, null),
-            MyButton("Sign up", false, null),
+            MyButton(text: "Login", color: Colors.white,),
+            MyButton(text: "Login", color: Colors.black,)
           ],
-          20
+          padding: 20
         ),
       ),
     );
